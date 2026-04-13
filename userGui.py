@@ -29,7 +29,6 @@ def deal_button_clicked():
     bot_hand_str = ", ".join(str(card) for card in game.players[1].hand)
     player_hand_str = ", ".join(str(card) for card in game.players[0].hand)
 
-
     bot_label.config(text=f"{game.players[1].name} Cards: {bot_hand_str} | Chips: {game.players[1].chips}")
     player_label.config(text=f"{game.players[0].name} Cards: {player_hand_str} | Chips: {game.players[0].chips}")
 
