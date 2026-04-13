@@ -59,7 +59,7 @@ class heads_up_poker():
         self.board = []
         self.current_pot = 0
         for p in self.players:
-            p.hand = [self.deck.deal(), self.deck.deal()]
+            p.hand = [self.deck.deal(2)]
             p.in_play = True
             p.current_bet = 0
 
