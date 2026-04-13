@@ -44,7 +44,7 @@ def deal_button_clicked():
 
 
 def advance_game_clicked():
-    game.deal.board()
+    game.deal_board()
 
     board_str = format_cards(game.board)
     board_label.config(text=f"Board: {board_str}")

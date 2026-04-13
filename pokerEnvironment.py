@@ -67,4 +67,19 @@ class heads_up_poker():
 
         self.has_button_index = 1 - self.has_button_index
 
+    def deal_board(self):
+        if(self.is_preflop):
+            self.board = [self.deck.deal(3)]
+            self.is_preflop = False
+            self.is_flop = True
+        elif(self.is_flop):
+            new_card = self.deck.deal(1)
+            self.board.extend([new_card])
+            self.is_flop = False
+            self.is_turn = True
+        elif(self.is_turn):
+            new_card = self.deck.deal(1)
+            self.board.extend([new_card])
+            self.is_turn = False
+            self.is_river = True
 
