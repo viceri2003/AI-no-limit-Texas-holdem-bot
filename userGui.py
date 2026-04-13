@@ -13,20 +13,27 @@ pot_label.pack(pady=20)
 bot_label = tk.Label(root, text="Bot Cards: [ ? ] [ ? ]", font=("Helvetica", 14), bg="#2b7a0b", fg="white")
 bot_label.pack(pady=10)
 
+board_label = tk.Label(root, text="Board: [   ] [   ] [   ] [   ] [   ]", font=("Helvetica", 18, "bold"), bg="#2b7a0b", fg="#f1c40f")
+board_label.pack(pady=20)
+
 player_label = tk.Label(root, text="Your Cards: [   ] [   ]", font=("Helvetica", 14), bg="#2b7a0b", fg="white")
 player_label.pack(pady=10)
 
+# Button Actions
 def deal_button_clicked():
     game.play_hand()
-
     pot_label.config(text=f"Pot: {game.current_pot}")
 
-    bot_label.config(text=f"{game.players[1].name} Cards: {game.players[1].hand} | Chips: {game.players[1].chips}")
-    player_label.config(text=f"{game.players[0].name} Cards: {game.players[0].hand} | Chips: {game.players[0].chips}")
+    board_label.config(text="Board: [   ] [   ] [   ] [   ] [   ]")
+
+    bot_hand_str = ", ".join(str(card) for card in game.players[1].hand)
+    player_hand_str = ", ".join(str(card) for card in game.players[0].hand)
 
 
-deal_button = tk.Button(root, text="Deal Pre-Flop", command=deal_button_clicked, font=("Helvetica", 14))
-deal_button.pack(pady=30)
+    bot_label.config(text=f"{game.players[1].name} Cards: {bot_hand_str} | Chips: {game.players[1].chips}")
+    player_label.config(text=f"{game.players[0].name} Cards: {player_hand_str} | Chips: {game.players[0].chips}")
 
 root.mainloop()
+
+
 

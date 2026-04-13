@@ -67,3 +67,4 @@ class heads_up_poker():
 
         self.has_button_index = 1 - self.has_button_index
 
+
