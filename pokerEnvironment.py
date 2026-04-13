@@ -1,3 +1,5 @@
+
+# A class representing a player
 class Player:
     def __init__(self, name, starting_chips):
         self.name = name
@@ -9,6 +11,7 @@ class Player:
     def __str__(self):
         return f" {self.name} (Chips: {self.chips})"
 
+# A class representing the poker environment
 class heads_up_poker():
     def __init__(self, player1, player2):
         self.player1 = Player(player1.name, player1.chips)
@@ -25,3 +28,4 @@ class heads_up_poker():
         self.has_button_index = 0
         self.sb_amount = 0
         self.bb_amount = 0
+
