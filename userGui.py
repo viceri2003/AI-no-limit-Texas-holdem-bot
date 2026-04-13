@@ -5,18 +5,18 @@ from pokerEnvironment import heads_up_poker
 game = heads_up_poker("User", "Bot")
 root = tk.Tk()
 root.title("Poker")
-root.config(bg="#2b7a0b")
+root.config(bg="white")
 
-pot_label = tk.Label(root, text="Pot: 0", font=("Helvetica", 16, "bold"), bg="#2b7a0b", fg="white")
+pot_label = tk.Label(root, text="Pot: 0", font=("Helvetica", 16, "bold"), bg="white", fg="black")
 pot_label.pack(pady=20)
 
-bot_label = tk.Label(root, text="Bot Cards: [ ? ] [ ? ]", font=("Helvetica", 14), bg="#2b7a0b", fg="white")
+bot_label = tk.Label(root, text="Bot Cards: [ ? ] [ ? ]", font=("Helvetica", 14), bg="white", fg="black")
 bot_label.pack(pady=10)
 
-board_label = tk.Label(root, text="Board: [   ] [   ] [   ] [   ] [   ]", font=("Helvetica", 18, "bold"), bg="#2b7a0b", fg="#f1c40f")
+board_label = tk.Label(root, text="Board: [   ] [   ] [   ] [   ] [   ]", font=("Helvetica", 18, "bold"), bg="white", fg="black")
 board_label.pack(pady=20)
 
-player_label = tk.Label(root, text="Your Cards: [   ] [   ]", font=("Helvetica", 14), bg="#2b7a0b", fg="white")
+player_label = tk.Label(root, text="Your Cards: [   ] [   ]", font=("Helvetica", 14), bg="white", fg="black")
 player_label.pack(pady=10)
 
 # Button Actions
