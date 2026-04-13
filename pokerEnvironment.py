@@ -1,3 +1,5 @@
+import eval7
+
 
 # A class representing a player
 class Player:
@@ -41,3 +43,12 @@ class heads_up_poker():
 
         bb_player.chips -= self.bb_amount
         bb_player.current_bet = self.bb_amount
+
+        self.current_pot += (self.bb_amount + self.sb_amount)
+
+    # Creating logic to play a hand, using the eval7 library.
+    # It is used to simulate a deck where you can shuffle, deal and
+    # count ranges etc
+    def play_hand(self):
+        self.deck.shuffle()
+        self.board = []
