@@ -14,8 +14,7 @@ class Player:
 # A class representing the poker environment
 class heads_up_poker():
     def __init__(self, player1, player2):
-        self.player1 = Player(player1.name, player1.chips)
-        self.player2 = Player(player2.name, player2.chips)
+        self.players = [Player(player1, 1000), Player(player2, 1000)]
         self.board = []
         self.is_preflop = True
         self.is_flop = False
@@ -26,6 +25,19 @@ class heads_up_poker():
 
         # Index 0 means Player 1 has the button, Index 1 means Player 2
         self.has_button_index = 0
+
+        # Blind sizing
         self.sb_amount = 0
         self.bb_amount = 0
 
+    def post_blinds(self):
+
+        # Identifying which player has blinds
+        sb_player = self.players[self.has_button_index]
+        bb_player = self.players[1 - self.has_button_index]
+
+        sb_player.chips -= self.sb_amount
+        bb_player.chips -= self.bb_amount
+
+        bb_player.chips -= self.bb_amount
+        bb_player.current_bet = self.bb_amount
