@@ -82,4 +82,11 @@ class heads_up_poker():
             self.board.extend([new_card])
             self.is_turn = False
             self.is_river = True
+        elif(self.is_river):
+            self.reset_board()
+            self.is_river = False
+            self.is_pre_flop = True
+
+    def reset_board(self):
+        self.board = []
 
