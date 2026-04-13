@@ -52,3 +52,10 @@ class heads_up_poker():
     def play_hand(self):
         self.deck.shuffle()
         self.board = []
+        self.current_pot = 0
+        for p in self.players:
+            p.hand = [self.deck_deal(), self.deck_deal()]
+            p.in_play = True
+            p.current_bet = 0
+
+        sb_player, bb_player = self. post_blinds()
