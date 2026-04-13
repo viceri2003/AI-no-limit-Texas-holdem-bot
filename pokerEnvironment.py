@@ -61,3 +61,4 @@ class heads_up_poker():
         sb_player, bb_player = self. post_blinds()
 
         self.has_button_index = 1 - self.has_button_index
+
