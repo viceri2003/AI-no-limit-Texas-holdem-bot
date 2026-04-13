@@ -9,3 +9,10 @@ class Player:
     def __str__(self):
         return f" {self.name} (Chips: {self.chips})"
 
+class heads_up_poker():
+    def __init__(self):
+        self.board = []
+        self.is_preflop = True
+        self.is_flop = False
+        self.is_turn = False
+        self.is_river = False
